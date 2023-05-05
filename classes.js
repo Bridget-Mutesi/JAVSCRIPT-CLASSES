@@ -47,3 +47,41 @@ carB.toggleAvailability();
  let rental = new Rental(Car,"Bridgette",new Date("2023-03-1"),new Date("2023-3-10"));
  let rentalDuration = rental.calculateRentaDuration();
  console.log(`Rental duration: ${rentalDuration} days(s)`);
+
+//  Create a Question class with the following properties:
+//  ● text(string): The text of the question.
+//  ● options(array): An array containing the multiple-choice options.
+//  ● correctAnswer(string): The correct answer to the question.
+//  The Question class should also have a method called checkAnswer that takes a
+//  user's answer as a parameter and returns true if the answer is correct and false
+//  otherwise.
+
+class Question {
+    constructor(text, options, correctAnswer) {
+      this.text = text;
+      this.options = options;
+      this.correctAnswer = correctAnswer;
+    }
+  
+    checkAnswer(userAnswer) {
+      return userAnswer === this.correctAnswer;
+    }
+  }
+ const qtn1 = new Question(
+    "What is the capital of Uganda?",
+    ["Nairobi", "paris", "Lagos", "Madrid"],
+    "Kampala"
+  );
+  
+  const qtn2 = new Question(
+    "How many days are their in a week?",
+    ["7days","3days","5days","10days"],
+    
+  );
+  console.log(qtn1.checkAnswer("Kampala")); // true
+  console.log(qtn1.checkAnswer("Nairobi")); // false
+
+  console.log(qtn2.checkAnswer("7days")); // true
+  console.log(qtn2.checkAnswer("10days")); // false
+
+
